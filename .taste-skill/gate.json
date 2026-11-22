@@ -1,0 +1,214 @@
+{
+ "start": "2026-11-21T00:15:49.247Z",
+ "round": 0,
+ "idle": 0,
+ "errors": 1,
+ "status": "error",
+ "history": [
+  {
+   "at": "2026-11-21T00:21:56.110Z",
+   "mode": "manual",
+   "status": "error",
+   "fails": 0,
+   "round": 0,
+   "reused": false,
+   "stopHookActive": false
+  }
+ ],
+ "max": 3,
+ "marker": {
+  "page": null,
+  "url": "http://localhost:8444/",
+  "root": null,
+  "kind": "software",
+  "category": "网络科技",
+  "primary": "联系柠汐",
+  "rounds": 3,
+  "start": "2026-11-21T00:15:49.247Z",
+  "by": "gate.mjs --start"
+ },
+ "manual": true,
+ "fp": "d4e271897674a297",
+ "page": "http://localhost:8444/",
+ "found": {
+  "fails": [
+   {
+    "check": "cta",
+    "where": "section#contact \"从你的项目聊起。\"",
+    "msg": "the last section before the footer ends with no button",
+    "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "cta"
+    ],
+    "wheres": [
+     "section#contact \"从你的项目聊起。\""
+    ]
+   },
+   {
+    "check": "hero-lines",
+    "where": "section.hero h1",
+    "msg": "the check fills the h1 to 36 characters (this hero's maxChars in heroes.json), not the page's own: it takes 3 lines at 1440, 2 at most",
+    "fix": "the check fills the h1 to this hero's maxChars, not your own: take the next type pairing the deal printed (start.mjs); when the h1 is final and fits, waive it (target: section.hero h1)",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "hero-lines"
+    ],
+    "wheres": [
+     "section.hero h1"
+    ]
+   }
+  ],
+  "warns": [
+   {
+    "check": "copy-headline",
+    "where": "h1#home-title \"企业网站与软件， 从想法到上线。\"",
+    "msg": "\"企业网站与软件， 从想法到上线。\": no category known to check it against (pass --category, or write the <title> as \"Name: what it is for whom\")",
+    "fix": "put the category noun in the h1 (and who it is for, or where), in 2 to 8 words",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-actions",
+    "where": "(the page)",
+    "msg": "the main action \"联系柠汐\" does not read word for word the same in the closing section",
+    "fix": "few actions, one wording: at most 2 in the hero, the main action word for word in nav, hero and close",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#home / section#services",
+    "msg": "179px between these sections, -30% against the median 255px",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#contact / footer.closing.footer--dark",
+    "msg": "330px between these sections, +30% against the median 255px of gaps at a change of ground",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "empty-area",
+    "where": "section#home \"企业网站与软件， 从想法到上线。\"",
+    "msg": "37% of the section is empty: 37% beside content that covers under half the container, in its 736px of rows (WARN over 35%, FAIL over 50%)",
+    "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "skip-link",
+    "where": "header.nav.nav--centre > div.wrap.nav__bar > a.skip-link:nth-of-type(1) \"跳转到主要内容\"",
+    "msg": "the first Tab stop is \"跳转到主要内容\", not a skip link: a keyboard user tabs through the whole nav on every visit",
+    "fix": "add the starter's skip link as the header's first child: <a class=\"skip-link\" href=\"#top\">Skip to content</a>",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "action-repeat",
+    "where": "header.nav.nav--centre > div.wrap.nav__bar > div.nav__actions > a.btn.btn--primary \"联系柠汐\"",
+    "msg": "\"联系柠汐\" shows 2 times on the first screen at 1440px (nav, hero): the nav's button and the hero's; nothing else on the screen may repeat it",
+    "fix": "show the action once a screen besides the nav's button: the hero's, the close's or the phone bar's, never all at once",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "cta",
+    "where": "section#services \"围绕业务，做好开发。\"",
+    "msg": "a section over 1.5 screens long with no link or button in it",
+    "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "empty-area",
+    "where": "footer.closing.footer--dark \"柠汐 网络科技\"",
+    "msg": "36% of the section is empty: 256px of empty rows between its content, in its 700px of rows (WARN over 35%, FAIL over 50%)",
+    "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   }
+  ],
+  "crashed": [
+   "the copy (the page showed no <main>, <section> or <h1> to lint)"
+  ],
+  "seconds": {
+   "consistency": 1,
+   "layout": 13
+  }
+ },
+ "open": [],
+ "waived": [
+  {
+   "check": "cta",
+   "where": "section#contact \"从你的项目聊起。\"",
+   "msg": "the last section before the footer ends with no button",
+   "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "cta"
+   ],
+   "wheres": [
+    "section#contact \"从你的项目聊起。\""
+   ],
+   "reason": "用户尚未提供真实电话、邮箱、微信或联系链接。保留后台可配置的联系按钮和渠道，不生成虚假收件人或无效联系动作。"
+  },
+  {
+   "check": "hero-lines",
+   "where": "section.hero h1",
+   "msg": "the check fills the h1 to 36 characters (this hero's maxChars in heroes.json), not the page's own: it takes 3 lines at 1440, 2 at most",
+   "fix": "the check fills the h1 to this hero's maxChars, not your own: take the next type pairing the deal printed (start.mjs); when the h1 is final and fits, waive it (target: section.hero h1)",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "hero-lines"
+   ],
+   "wheres": [
+    "section.hero h1"
+   ],
+   "reason": "这是中文最终标题，共两行，已在 1440 和 390 实际页面验证。压力测试补入 36 个中文字符，按西文行数上限评价；后台允许更长文案自然增长。"
+  }
+ ],
+ "warnCount": 9,
+ "note": "the copy (the page showed no <main>, <section> or <h1> to lint)",
+ "at": "2026-11-21T00:21:56.111Z"
+}
